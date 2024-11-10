@@ -32,17 +32,28 @@ minSize=(30, 30): Minimum size of faces to be detected.
 
 
 ### Haar Cascade Classifier:
-The Haar Cascade Classifier is a machine learning-based approach to object detection. The classifier used in this script is pre-trained on a large dataset of images containing frontal faces, and works by analyzing patterns of pixel intensities that correspond to face-like structures.
+Face detection using the Haar Cascade algorithm is a traditional computer vision technique that detects faces by identifying specific features, such as edges and textures, within an image. The method is based on Haar-like features and uses a cascade classifier, which is a combination of many small classifiers (or stages) applied in a sequence to detect objects like faces.
 
-### How it Works:
-The algorithm works by detecting specific features of faces such as eyes, nose, and mouth, and combines these features to recognize the face as a whole.
-The detectMultiScale method scans the image at multiple scales, checking for face-like patterns at various sizes.
+#### How Haar Cascade Works
+1. Haar-Like Features: Haar-like features are patterns of adjacent rectangular regions in an image. The algorithm calculates the difference in pixel intensities between these regions to identify features, such as eyes, nose, and mouth.
+
+2. Cascade of Classifiers: Haar Cascade uses a series of classifiers, each focusing on different levels of detail. The process begins by scanning small regions of the image and progresses through multiple layers. If a region passes all stages, it is classified as containing a face; otherwise, the region is discarded.
+
+3. Training with Positive and Negative Images: The model is trained using a large dataset of images containing faces (positive samples) and images without faces (negative samples). The cascade is trained to detect face-like features and to ignore non-face patterns.
+
+#### Pros and Cons of Haar Cascade
+Pros:
+. Fast and Lightweight: Haar Cascade is computationally efficient, which makes it suitable for real-time face detection.
+. Simple to Use: Haar Cascade models are easy to integrate and use with OpenCV.
+
+Cons:
+. Lower Accuracy: It is less accurate than modern deep learning models, especially under varying lighting and complex backgrounds.
+. Sensitivity to Angles and Scale: Haar Cascade may struggle with detecting faces that are rotated or occluded.
 
 ### Usage
 Place your images in the ./input_images directory.
 Run the script.
 After the script finishes, check the ./output_images folder for the images with detected faces.
-
 "python FaceDetection_Haarcascade.py"
 
 ### Output
@@ -52,4 +63,4 @@ After running the script, the processed images will be saved in the output_image
 You can easily modify the parameters or improve the script for your specific use case. This algorithm does not perform well under more complex conditions or at different angles (both in images and in real-time). Therefore, you may consider using more advanced models or techniques, such as deep learning-based methods, to improve performance.
 
 
-I also have a face detection model based on a DNN (Deep Neural Network) on my page, which detects faces in real-time with acceptable speed and accuracy at different angles.
+I also have a [face detection model based on a DNN (Deep Neural Network)](https://github.com/NasrinAlaei/FaceDetection_DNN) on my page, which detects faces in real-time with acceptable speed and accuracy at different angles.
