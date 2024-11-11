@@ -57,7 +57,7 @@ After the script finishes, check the ./output_images folder for the images with 
 "python FaceDetection_Haarcascade.py"
 
 ### Output
-After running the script, the processed images will be saved in the output_images folder. Each processed image will have a red rectangle drawn around the detected face(s).
+After running the script, the processed images will be saved in the output_images folder. Each processed image will have a blue rectangle drawn around the detected face(s).
 
 
 You can easily modify the parameters or improve the script for your specific use case. This algorithm does not perform well under more complex conditions or at different angles (both in images and in real-time). Therefore, you may consider using more advanced models or techniques, such as deep learning-based methods, to improve performance.
