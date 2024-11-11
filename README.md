@@ -22,7 +22,7 @@ Each image is converted to grayscale, which improves the efficiency and accuracy
 The detectMultiScale function is used to detect faces in the image. It returns a list of rectangles that correspond to detected faces.
 
 4. Output Folder:
-The processed images, where faces are highlighted with red rectangles, are saved in the ./output_images1 folder.
+The processed images, where faces are highlighted with blue rectangles, are saved in the ./output_images folder.
 The output images are saved with the prefix detected_ in their filename to indicate that the face detection has been applied.
 
 5. Parameters:
